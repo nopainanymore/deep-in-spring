@@ -50,7 +50,6 @@ public class Aspect {
         log.info("Aspect- doAfterThrowing- Exception");
     }
 
-
     @Around("pointCut()")
     public String doAround(ProceedingJoinPoint proceedingJoinPoint) {
         log.info("Aspect- doAround- start");
@@ -61,6 +60,4 @@ public class Aspect {
             return throwable.getMessage();
         }
     }
-
-
 }
