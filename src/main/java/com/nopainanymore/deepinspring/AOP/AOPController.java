@@ -18,8 +18,9 @@ public class AOPController {
 
 
     @GetMapping("/hello")
-    public void aop(){
+    public String aop() {
         log.info("AOPController- aop: hello AOP ");
+        return "AOP";
     }
 
 

@@ -3,9 +3,8 @@ package com.nopainanymore.deepinspring.AOP;
 import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -38,7 +37,29 @@ public class Aspect {
     @After("pointCut()")
     public void doAfter() {
         log.info("Aspect- doAfter- after the pointCut");
+    }
 
+    @AfterReturning(pointcut = "pointCut()", returning = "ret")
+    public void doAfterReturning(String ret) {
+        log.info("Aspect- doAfterReturning:{}", ret);
+    }
+
+
+    @AfterThrowing(pointcut = "pointCut()")
+    public void doAfterThrowing() {
+        log.info("Aspect- doAfterThrowing- Exception");
+    }
+
+
+    @Around("pointCut()")
+    public String doAround(ProceedingJoinPoint proceedingJoinPoint) {
+        log.info("Aspect- doAround- start");
+        try {
+            return (String) proceedingJoinPoint.proceed();
+        } catch (Throwable throwable) {
+            log.info("Aspect- doAround- end");
+            return throwable.getMessage();
+        }
     }
 
 
