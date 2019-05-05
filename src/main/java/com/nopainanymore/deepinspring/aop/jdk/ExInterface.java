@@ -1,4 +1,4 @@
-package com.nopainanymore.deepinspring.AOP.JDK;
+package com.nopainanymore.deepinspring.aop.jdk;
 
 /**
  * deep-in-spring: ExInterface

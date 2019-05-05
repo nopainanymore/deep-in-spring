@@ -1,4 +1,4 @@
-package com.nopainanymore.deepinspring.AOP;
+package com.nopainanymore.deepinspring.aop;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,8 +19,8 @@ public class AOPController {
 
     @GetMapping("/hello")
     public String aop() {
-        log.info("AOPController- aop: hello AOP ");
-        return "AOP";
+        log.info("AOPController- aop: hello aop ");
+        return "aop";
     }
 
 }

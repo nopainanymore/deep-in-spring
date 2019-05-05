@@ -1,4 +1,4 @@
-package com.nopainanymore.deepinspring.AOP.CGLIB;
+package com.nopainanymore.deepinspring.aop.cglib;
 
 /**
  * deep-in-spring: CGLibTest

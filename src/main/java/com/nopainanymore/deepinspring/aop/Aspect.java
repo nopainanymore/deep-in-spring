@@ -1,4 +1,4 @@
-package com.nopainanymore.deepinspring.AOP;
+package com.nopainanymore.deepinspring.aop;
 
 import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +22,7 @@ public class Aspect {
 
     private static final Gson gson = new Gson();
 
-    @Pointcut("execution(public * com.nopainanymore.deepinspring.AOP.AOPController.*(..)))")
+    @Pointcut("execution(public * com.nopainanymore.deepinspring.aop.AOPController.*(..)))")
     public void pointCut() {
     }
 

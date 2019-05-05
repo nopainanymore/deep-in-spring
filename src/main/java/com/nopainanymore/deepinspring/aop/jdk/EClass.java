@@ -1,4 +1,4 @@
-package com.nopainanymore.deepinspring.AOP.JDK;
+package com.nopainanymore.deepinspring.aop.jdk;
 
 import lombok.extern.slf4j.Slf4j;
 
