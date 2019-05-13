@@ -30,14 +30,6 @@ public class ApplicationUtil implements ApplicationContextAware {
         return applicationContext;
     }
 
-    /**
-     * 根据类名获取到bean
-     *
-     * @param <T>
-     * @param clazz
-     * @return
-     * @throws BeansException
-     */
     @SuppressWarnings("unchecked")
     public static <T> T getBeanByClass(Class<T> clazz) throws BeansException {
         try {
@@ -53,7 +45,8 @@ public class ApplicationUtil implements ApplicationContextAware {
 
     private static String upperToLowerCamelCase(String upperCamelCase) {
         char[] cs = upperCamelCase.toCharArray();
-        cs[0] += 32;//首字母大写到小写
+        // 类名首字母小写
+        cs[0] += 32;
         return String.valueOf(cs);
     }
 
